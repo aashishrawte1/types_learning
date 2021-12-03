@@ -19,6 +19,7 @@ export const itemsRouter = express.Router();
 // GET items
 
 itemsRouter.get("/", async (req: Request, res: Response) => {
+    console.log("get request");
     try { 
         const items: Item[] = await ItemService.findAll();
         res.status(200).send(items);
